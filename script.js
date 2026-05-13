@@ -27,16 +27,13 @@ function playGame(){
     let humanScore = 0;
     let computerScore = 0;
 
-    let humanChoice;
-    let computerChoice;
-
     let round = 1;
 
     while (round < 6){
         console.log(`ROUND : ${round}`)
 
-        humanScore = getHumanChoice();
-        computerScore = getComputerChoice();
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
 
         playRound(humanChoice, computerChoice, humanScore, computerScore);
 
@@ -51,3 +48,5 @@ function playGame(){
         console.log(`Both scored ${humanScore}. This game is a DRAW!`)
     }
 }
+
+playGame();

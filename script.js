@@ -23,3 +23,31 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     }
 }
 
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+
+    let humanChoice;
+    let computerChoice;
+
+    let round = 1;
+
+    while (round < 6){
+        console.log(`ROUND : ${round}`)
+
+        humanScore = getHumanChoice();
+        computerScore = getComputerChoice();
+
+        playRound(humanChoice, computerChoice, humanScore, computerScore);
+
+        round++;
+    }
+
+    if (humanScore > computerScore){
+        console.log(`You WINS the game with score ${humanScore}`);
+    } else if (humanScore < computerScore){
+        console.log(`You LOSE the game. Computer had score ${computerScore}`);
+    } else {
+        console.log(`Both scored ${humanScore}. This game is a DRAW!`)
+    }
+}

@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
     const choices = ["rock","paper","scissors"];
     let choice = choices[Math.floor(Math.random() * choices.length)];
@@ -9,7 +12,7 @@ function getHumanChoice() {
     return hchoice;
 }
 
-function playRound(humanChoice, computerChoice, humanScore, computerScore) {
+function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice){
         console.log(`Both chose ${humanChoice}. Draw!`);
     } else if ((humanChoice == "rock" && computerChoice == "scissors")||(humanChoice == "paper" && computerChoice == "rock")||(humanChoice == "scissors" && computerChoice == "paper")) {
@@ -23,9 +26,6 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     }
 }
 
-    let humanScore = 0;
-    let computerScore = 0;
-
 function playGame(){
     let round = 1;
 
@@ -35,7 +35,7 @@ function playGame(){
         let humanChoice = getHumanChoice().toLowerCase();
         let computerChoice = getComputerChoice();
 
-        playRound(humanChoice, computerChoice, humanScore, computerScore);
+        playRound(humanChoice, computerChoice);
 
         round++;
     }
